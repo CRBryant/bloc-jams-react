@@ -1,0 +1,33 @@
+.hero-title {
+  background-position: center;
+  height: 400px;
+  font-size: 4rem;
+  font-weight: 300;
+  left: 0;
+  letter-spacing: 0.5rem;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px rgb(58,23,63);
+  width: 100%;
+}
+
+.selling-points {
+  position: relative;
+}
+
+.point {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  width: 33%;
+  float: left;
+}
+
+.point-title {
+  font-size: 1.25rem;
+}
+
+.point-description {
+  font-size: 0.9rem;
+}
