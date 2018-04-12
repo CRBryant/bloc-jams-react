@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './PlayerBar.css';
 
 class PlayerBar extends Component {
   render() {
@@ -8,7 +9,7 @@ class PlayerBar extends Component {
           <button id="previous" onClick={this.props.handlePrevClick} >
             <span className="ion-skip-backward"></span>
           </button>
-          <button id="play-pause" onClick={this.props.handleSongClick} >
+          <button id="play-pause" onClick={this.props.handleSongClick} data-play-state={this.props.isPlaying ? 'playing' : 'paused'}>
             <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
           </button>
           <button id="next" onClick={this.props.handleNextClick} >
