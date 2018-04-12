@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import './Album.css';
 
 class Album extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class Album extends Component {
     let seconds = Math.floor(timeInSeconds % 60);
     if (seconds < 10) { return minutes + ':0' + seconds }
     return (minutes) + ':' + (seconds);
-    
+
   }
 
   handleSongClick(song) {
@@ -106,11 +107,22 @@ class Album extends Component {
     this.setState({ volume: newVolume });
   }
 
+  songClass(song) {
+    if (this.state.currentSong === song) {
+      if (this.state.isPlaying) {
+        return 'song playing';
+      } else {
+        return 'song';
+      }
+    }
+    return 'song';
+  }
+
   render() {
     return (
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} />
+          <img id="album-cover-art" src={this.state.album.albumCover} alt ="Album Cover"/>
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
@@ -125,7 +137,7 @@ class Album extends Component {
           </colgroup>
           <tbody>
             {this.state.album.songs.map( (song, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+              <tr className={this.songClass(song)} key={index} onClick={() => this.handleSongClick(song)} >
                 <td className="song-actions">
                   <button>
                     <span className="song-number">{index + 1}</span>

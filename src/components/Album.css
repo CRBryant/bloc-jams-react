@@ -1,0 +1,28 @@
+tr {
+  transition: all 0.2s ease;
+}
+
+tr:focus {
+  outline: #ccc;
+}
+
+tr:hover .ion-play,
+tr.playing .ion-pause,
+tr.paused .ion-play {
+  display: block;
+}
+
+tr .ion-play,
+tr .ion-pause,
+tr:hover .song-number,
+tr.playing .ion-play,
+tr.playing .song-number,
+tr.paused .ion-paused,
+tr.paused .song-number {
+  display: none;
+}
+
+tr:hover {
+  background: hsla(0, 0, 0, 0.05);
+  cursor: pointer;
+}
