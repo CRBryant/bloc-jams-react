@@ -15,7 +15,7 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
-      volume: 0,
+      volume: 0.5,
       isPlaying: false
     };
 
@@ -65,7 +65,7 @@ class Album extends Component {
     let seconds = Math.floor(timeInSeconds % 60);
     if (seconds < 10) { return minutes + ':0' + seconds }
     return (minutes) + ':' + (seconds);
-    
+
   }
 
   handleSongClick(song) {
